@@ -45,9 +45,12 @@ function renderCards(list) {
     const card = document.createElement("article");
     card.className = "card";
 
-    if (m.rating >= 8) card.classList.add("hot");
+    if (m.rating >= 8) {
+        card.classList.add("hot");
+    }
+ 
 
-    
+card.onclick = () => alert(m.overview);
     card.innerHTML = `
       <img class="poster" src="${posterUrl(m.poster, "w342")}" alt="${m.title} 포스터">
       <span class="badge">${m.rating}</span>
